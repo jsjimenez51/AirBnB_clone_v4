@@ -217,7 +217,7 @@ github repo
 * Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
 * Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
-* Essence Boayue, [eboayue](https://github.com/eboayue) | [@girlsaregeeks](https://twitter.com/girlsaregeeks2)
+* Essence Boayue, [eboayue](https://github.com/eboayue) | [@girlsaregeeks2](https://twitter.com/girlsaregeeks2)
 * Joshua Jimenez, [jsjimenez51](https://github.com/jsjimenez51) | [@bigjoshcodes](https://twitter.com/bigjoshcodes)
 
 ## License
