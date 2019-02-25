@@ -24,41 +24,41 @@ $('document').ready(function () {
     }
   });
 
-  // funtionality for Places search
+  // functionality to load places from the front-end
   $.ajax({
     type: 'POST',
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
     contentType: 'application/json',
-    data: '{}',
     dataType: 'json',
+    data: '{}',
     success: function (data) {
       for (let place of data) {
         $('.places').append(
           `<article>
-              <div class='title'>
-                <h2>${place.name}</h2>
-                <div class='price_by_night'>
-                  ${place.price_by_night}
-                </div>
+            <div class="title">
+              <h2>${place.name}</h2>
+              <div class="price_by_night">
+                ${place.price_by_night}
               </div>
-              <div class='information'>
-                <div class='max_guest'>
-                  <i class='fa fa-users fa-3x' aria-hidden='true'></i>
-                  <br />
-                  ${place.number_rooms} Bedrooms
-                </div>
-                <div class='number_rooms'>
-                  <i class='fa fa-users fa-3x' aria-hidden='true'></i>
-                  <br />
-                  ${place.number_bathrooms} Bathroom
-                </div>
+            </div>
+            <div class="information">
+              <div class="max_guest">
+                <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                <br />
+                ${place.number_rooms} Bedrooms
               </div>
-              </div class='user'>
+              <div class="number_rooms">
+                <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                <br />
+                ${place.number_bathrooms} Bathroom
               </div>
-              <div class='description'>
-                ${place.description}
-              </div>
-            </article>`
+            </div>
+            </div class="user">
+            </div>
+            <div class="description">
+              ${place.description}
+            </div>
+          </article>`
         );
       }
     }
