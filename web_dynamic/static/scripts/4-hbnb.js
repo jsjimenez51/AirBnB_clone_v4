@@ -1,17 +1,22 @@
 let selectedAmens = [];
+let selectedAmensId = [];
 
 $('document').ready(function () {
   // functionality for Amenity Selection Popover
   $('.amenities input').change(function () {
     if ($(this).is(':checked')) {
       selectedAmens.push($(this).attr('data-name'));
+      selectedAmensId.push($(this).attr('data-id'));
     } else {
       let rmAmen = $(this).attr('data-name');
       let amenIdx = selectedAmens.indexOf(rmAmen);
       if (amenIdx > -1) {
         selectedAmens.splice(amenIdx, 1);
+        selectedAmensId.splice(amenIdx, 1);
       }
     }
+    console.log(selectedAmens);
+    console.log(selectedAmensId);
     selectedAmens.sort();
     $('.amenities h4').text(selectedAmens.join(', '));
   });
@@ -37,17 +42,17 @@ $('document').ready(function () {
 
   // funtionality for the Search Button
   $('button').click(function () {
-    $('SECTION.places article').remove();
+    $('article').remove();
     $.ajax({
       type: 'POST',
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
       contentType: 'application/json',
       dataType: 'json',
-      data: JSON.stringify({ amenities: selectedAmens }),
+      data: JSON.stringify({ amenities: selectedAmensId }),
       success: (data) => {
-        console.log(`Searching for: { "amenities": [${selectedAmens}] }`);
+        console.log(`Searching for: { "amenities": [${selectedAmensId}] }`);
         apiData(data);
-        console.log("Data", data);
+        console.log("Data", data.length);
       }
     });
   });
