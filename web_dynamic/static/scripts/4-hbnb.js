@@ -2,6 +2,7 @@ let selectedAmens = [];
 let selectedAmensId = [];
 
 $('document').ready(function () {
+  $('.places').css("display", "none");
   // functionality for Amenity Selection Popover
   $('.amenities input').change(function () {
     if ($(this).is(':checked')) {
@@ -53,6 +54,7 @@ $('document').ready(function () {
         console.log(`Searching for: { "amenities": [${selectedAmensId}] }`);
         apiData(data);
         console.log("Data", data.length);
+        $('.places').css("display", "flex");
       }
     });
   });
